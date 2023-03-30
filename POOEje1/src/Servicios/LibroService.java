@@ -21,6 +21,7 @@ public class LibroService {
     Libro ln = new Libro();
 
     public Libro altaLibro() {
+
         System.out.println(" Ingrese el ISBN ");
         ln.setIsbn(Leer.nextLine());
         System.out.println("Ingrese el titulo del libro ");
@@ -38,11 +39,9 @@ public class LibroService {
         System.out.println("El nombre del titulo es: " + ln.getTitulo());
         System.out.println("El nombre del autor es:" + ln.getAutor());
         System.out.println(" Tiene " + ln.getNpaginas() + " Paginas ");
-       return ln;
+        return ln;
 
-    
-
-}
+    }
 }
 // Are you doing the homework now?
 // What do you do.

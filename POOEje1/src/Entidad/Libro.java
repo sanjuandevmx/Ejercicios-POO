@@ -13,22 +13,29 @@ package Entidad;
  */
 public class Libro {
 
-  
+  //Declaramos atributos
 
     private String isbn;
     private String titulo;
     private String autor;
     private int npaginas;
+    
+    //Creamos los constructores
+    
+    //Constructor por defecto
 
     public Libro() {
     }
 
+    //Constructores por parametros
     public Libro(String isbn, String titulo, String autor, int npaginas) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
         this.npaginas = npaginas;
     }
+    
+    //Getters and Setters
 
     public String getIsbn() {
         return isbn;

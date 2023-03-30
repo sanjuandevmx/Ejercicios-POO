@@ -10,18 +10,27 @@ package Entidad;
  * @author brian
  */
 public class CuentaBancaria {
-    
+    private String nombre;
     private int nCuenta;
-    private double dni;
+    private long dni;
     private int saldoActual;
 
     public CuentaBancaria() {
     }
-
-    public CuentaBancaria(int nCuenta, double dni, int saldoActual) {
+    
+    public CuentaBancaria(String nombre, int nCuenta, long dni, int saldoActual) {
+        this.nombre = nombre;
         this.nCuenta = nCuenta;
         this.dni = dni;
         this.saldoActual = saldoActual;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getnCuenta() {
@@ -32,11 +41,11 @@ public class CuentaBancaria {
         this.nCuenta = nCuenta;
     }
 
-    public double getDni() {
+    public long getDni() {
         return dni;
     }
 
-    public void setDni(double dni) {
+    public void setDni(long dni) {
         this.dni = dni;
     }
 
@@ -47,6 +56,9 @@ public class CuentaBancaria {
     public void setSaldoActual(int saldoActual) {
         this.saldoActual = saldoActual;
     }
-    
-    
+
+    @Override
+    public String toString() {return "CuentaBancaria{" + "nombre=" + nombre + ", nCuenta=" + nCuenta + ", dni=" + dni + ", saldoActual=" + saldoActual + '}';
+    }
+
 }
