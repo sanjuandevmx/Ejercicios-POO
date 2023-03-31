@@ -28,6 +28,9 @@ public class POOEje08 {
         cser.vecesRepetido();
         cser.compararLongitud();
         cser.unirFrases();
+        cser.reemplazar();
+        cser.contiene();
+        cser.mostrarVocales();
     }
     
 }

@@ -25,6 +25,53 @@ public class CadenaServicio {
 
     }
 
+    public void mostrarVocales() {
+        String vocalA = "a";
+        String vocalE = "e";
+        String vocalI = "i";
+        String vocalO = "o";
+        String vocalU = "u";
+        int posicionA, posicionE, posicionI,posicionO,posicionU = 0;
+        int contadorA=0;
+        int contadorE=0;
+        int contadorI=0;
+        int contadorO=0;
+        int contadorU=0;
+         posicionA = frase.getFrase().indexOf(vocalA);
+        while (posicionA != -1) {
+            contadorA++;
+            posicionA = frase.getFrase().indexOf(vocalA, posicionA + 1);
+        }
+               System.out.println(contadorA);
+                posicionE = frase.getFrase().indexOf(vocalE);
+        while (posicionE != -1) {
+            contadorE++;
+            posicionE = frase.getFrase().indexOf(vocalE, posicionE + 1);
+        }
+        System.out.println(contadorE);
+                 posicionI = frase.getFrase().indexOf(vocalI);
+        while (posicionI != -1) {
+            contadorI++;
+            posicionI = frase.getFrase().indexOf(vocalI, posicionI + 1);
+        }
+        System.out.println(contadorI);
+                        posicionO = frase.getFrase().indexOf(vocalO);
+        while (posicionO != -1) {
+            contadorO++;
+            posicionO = frase.getFrase().indexOf(vocalO, posicionO + 1);
+        }
+        System.out.println(contadorO);
+                        posicionU = frase.getFrase().indexOf(vocalU);
+        while (posicionU != -1) {
+            contadorU++;
+            posicionU = frase.getFrase().indexOf(vocalU, posicionU + 1);
+        }
+        System.out.println(contadorU);
+        
+        System.out.println("___________________________________________________-");
+    }
+    
+
     public void longitudFrase() {
         frase.setLongitud(frase.getFrase().length());
 
@@ -88,4 +135,24 @@ public class CadenaServicio {
         System.out.println("_________________________________________________");
     }
 
+    public void reemplazar() {
+        char nuevoCaracter;
+        String fraseNueva;
+        System.out.println(" Ingrese un caracter ");
+        nuevoCaracter = Leer.nextLine().charAt(0);
+        fraseNueva = frase.getFrase().replace('a', nuevoCaracter);
+
+        System.out.println(fraseNueva);
+        System.out.println("_________________________________________________________");
+
+    }
+
+    public void contiene() {
+        String letraValidar;
+        System.out.println("Ingrese la letra a buscar");
+        letraValidar = Leer.nextLine();
+        boolean cierto = frase.getFrase().contains(letraValidar);
+        System.out.println(cierto);
+        System.out.println("__________________________________________________________");
+    }
 }
