@@ -20,7 +20,7 @@ public class RectanguloServicio {
     Scanner Leer = new Scanner(System.in);
     
     Rectangulo form = new Rectangulo();
-    
+    //Meetodo para crear el rectangulo con los datos ingresados por el usuario
     public Rectangulo IngresoDatos() {
         
         System.out.println("Ingrese la base");
@@ -29,17 +29,17 @@ public class RectanguloServicio {
         form.setAltura(Leer.nextFloat());
         return form;
     }
-    
+    // Metodo Superficie() Servira para calcular la superficie del rectangulo
     public void Superficie(Rectangulo form){
         form.setSuperficie(form.getBase()*form.getAltura());
-        System.out.println(form.getSuperficie());
+        System.out.println("La superficie es de "+form.getSuperficie());
     }
-    
+    // Metodo Perimetro() Servira para calcular el perimetro del rectangulo
     public void Perimetro(Rectangulo form){
         form.setPerimetro((form.getBase()+form.getAltura())*2);
-        System.out.println(form.getPerimetro());
+        System.out.println( "El perimetro es de: "+form.getPerimetro());
     }
-    
+    //Metodo dibujarRectangulo Servira para dibujar el rectangulo con Asteriscos
     public void dibujarRectangulo( Rectangulo form) {
     for (int i = 0; i < form.getAltura(); i++) {
         for (int j = 0; j < form.getBase(); j++) {

@@ -15,14 +15,17 @@ package Entidades;
  * @author brian
  */
 public class Circunferencia {
+
     private float radio;
 
+    //Constructores
     public Circunferencia() {
     }
 
     public Circunferencia(float radio) {
         this.radio = radio;
     }
+//Getters and Setters
 
     public float getRadio() {
         return radio;
@@ -31,7 +34,5 @@ public class Circunferencia {
     public void setRadio(float radio) {
         this.radio = radio;
     }
-    
-    
-}
 
+}

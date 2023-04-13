@@ -37,9 +37,12 @@ public class PersonaServicios {
                 } else if (sex.contentEquals("NB") || sex.contentEquals("nb")){
         prsn.setSexo(sex);
     }
-                return prsn;
+
+   
+                    return prsn;
     }
 }
+
 
 
                   

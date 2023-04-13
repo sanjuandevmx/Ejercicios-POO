@@ -50,6 +50,7 @@ public class OperacionServicio {
 
     Operacion op1 = new Operacion();
 
+    // Método para crearOperacion(): que le pide al usuario los dos números y los guarda en los atributos del objeto.
     public Operacion IngresoDatos() {
         System.out.println(" Ingrese el valor de N1 ");
         op1.setN1(Leer.nextDouble());
@@ -57,18 +58,23 @@ public class OperacionServicio {
         op1.setN2(Leer.nextDouble());
         return op1;
     }
+//Método sumar(): calcular la suma de los números y devolver el resultado al main.
 
     public void Sumar(Operacion op1) {
         double suma = op1.getN1() + op1.getN2();
         System.out.println(suma);
 
     }
+// Método restar(): calcular la resta de los números y devolver el resultado al main
 
     public void Restar(Operacion op1) {
         double resta = op1.getN1() - op1.getN2();
         System.out.println(resta);
     }
 
+    //Método multiplicar(): primero valida que no se haga una multiplicación por cero, si
+//fuera a multiplicar por cero, el método devuelve 0 y se le informa al usuario el error.
+//Si no, se hace la multiplicación y se devuelve el resultado al main.
     public void Multiplicar(Operacion op1) {
         if (op1.getN1() > 0 || op1.getN2() > 0) {
             double producto = op1.getN1() * op1.getN2();
@@ -78,6 +84,9 @@ public class OperacionServicio {
         }
 
     }
+//Método dividir(): primero valida que no se haga una división por cero, si fuera a pasar
+//una división por cero, el método devuelve 0 y se le informa al usuario el error se le
+//informa al usuario. Si no, se hace la división y se devuelve el resultado al main.
 
     public void Division(Operacion op1) {
         if (op1.getN1() > 0 || op1.getN2() > 0) {
@@ -88,5 +97,3 @@ public class OperacionServicio {
         }
     }
 }
-
-

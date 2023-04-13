@@ -19,6 +19,8 @@ public class LibroService {
     public Scanner Leer = new Scanner(System.in);
 
     Libro ln = new Libro();
+    
+    //Método para cargar un libro pidiendo los datos al usuario.
 
     public Libro altaLibro() {
 
@@ -33,6 +35,8 @@ public class LibroService {
         return ln;
 
     }
+    
+    //Metodo para mostrar los datos del libro.
 
     public Libro mostrarLibro() {
         System.out.println(" El ISBN es: " + ln.getIsbn());
@@ -43,7 +47,4 @@ public class LibroService {
 
     }
 }
-// Are you doing the homework now?
-// What do you do.
-// You have to do Everything for be a champions
 
