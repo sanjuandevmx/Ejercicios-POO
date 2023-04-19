@@ -11,7 +11,7 @@ package Entidad;
  */
 public class Cafetera {
 
-    private double capacidadMaxima = 1000;
+    private double capacidadMaxima;
     private double cantidadActual;
 
     public Cafetera() {

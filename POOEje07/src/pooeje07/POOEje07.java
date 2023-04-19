@@ -13,13 +13,39 @@ package pooeje07;
 import Entidad.Persona;
 import Servicios.PersonaServicios;
 
-
 public class POOEje07 {
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         // TODO code application logic here
-        
-        PersonaServicios ps = new PersonaServicios();
-        Persona p1 = ps.crearPersona();   }
-   
+
+        PersonaServicios service = new PersonaServicios();
+
+        double menorPeso = 0, pesoIdeal = 0, mayorPeso = 0, mayorEdad = 0, menorEdad = 0, imc  =0;
+        boolean edad = false;
+
+         Persona[] persona = new Persona[4];
+
+        for (int i = 0; i < persona.length; i++) {
+            persona[i] = service.crearPersona();
+
+           imc = service.calcularIMC(persona[i], i);
+            if (imc == -1) {
+                menorPeso++;
+            } else if (imc == 0) {
+                pesoIdeal++;
+            } else {
+                mayorPeso++;
+            }
+            edad = service.esMayorDeEdad(persona[i]);
+            if (edad) {
+                mayorEdad++;
+            } else {
+                menorEdad++;
+            }
+        }
+
+        System.out.println("Hay " + menorPeso + " con bajo peso, " + pesoIdeal + " con peso ideal y " + mayorPeso + " con sobre peso.");
+        System.out.println("Hay " + mayorEdad + " personas mayores y " + menorEdad + " personas menores de edad.");
+    }
+
 }

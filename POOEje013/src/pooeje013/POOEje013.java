@@ -14,7 +14,7 @@ public class POOEje013 {
 
         Curso curso1 = new Curso();
         cs.CrearCurso();
-        cs.cargarAlumno(curso1);
+       // cs.cargarAlumno(curso1);
         cs.calcularGananciaSemanal();
 
     }

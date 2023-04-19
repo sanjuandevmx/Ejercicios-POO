@@ -5,6 +5,7 @@
  */
 package pooeje06;
 
+import Entidad.Cafetera;
 import Service.CafeteraService;
 import java.util.Scanner;
 
@@ -21,6 +22,7 @@ public class POOEje06 {
         // TODO code application logic here
         Scanner Leer = new Scanner(System.in);
         CafeteraService nesspreso = new CafeteraService();
+        Cafetera cafe = nesspreso.crearCafetera();
 
         int option;
         do {
@@ -29,6 +31,7 @@ public class POOEje06 {
             System.out.println("2 Servir taza");
             System.out.println("3 Vaciar cafetera");
             System.out.println("4 Agregar cafe");
+            System.out.println("______________________________");
             option = Leer.nextInt();
 
             switch (option) {

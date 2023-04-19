@@ -56,7 +56,7 @@ public class CursoService {
         alumn.setPrecioPorHora(Leer.nextFloat());
         this.cargarAlumno(alumn);
         //cargarAlumno();
-
+this.mostrarAlumno();
     }
     
     
@@ -86,6 +86,15 @@ public class CursoService {
         System.out.println("La ganancia semanal es de :" + precio);
         
     }
-          
+    
+    public void mostrarAlumno(){
+        this.cargarAlumno(alumn);
+         String[] alumnos = new String[5];
+        for (int i = 0; i < alumnos.length; i++) {
+            System.out.print(alumnos[i]);
+            
+
+        }
+    }
 
 }

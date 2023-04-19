@@ -18,33 +18,51 @@ import java.util.Scanner;
  */
 public class PersonaService {
 
-    Persona people  = new Persona();
+    Persona people = new Persona();
     Scanner Leer = new Scanner(System.in);
-    
-    public Persona crearPersona(){
-        
+
+    public Persona crearPersona() {
+
         System.out.println("Ingrese su nombre");
         people.setPersona(Leer.nextLine());
         System.out.println("Ingrese el día de su fecha de nacimiento");
         int dia = Leer.nextInt();
-        
+
         System.out.println("Ingrese el mes de su fecha de nacimiento");
         int mes = Leer.nextInt();
-        
+
         System.out.println("Ingrese el año de su fecha de nacimiento");
         int anio = Leer.nextInt();
-        
-        Date fecha = new Date(anio-1900,mes-1,dia);
+
+        Date fecha = new Date(anio - 1900, mes - 1, dia);
         people.setfdn(fecha);
         return people;
     }
-    
-    public void calcularEdad(){
-        LocalDate ahora = LocalDate.now();
-        LocalDate fechaNac= LocalDate.parse((CharSequence) people.getfdn());
-        Period periodo = Period.between(fechaNac, ahora);
-        System.out.printf("Tu edad es: %s años, %s meses y %s dias", periodo.getYears(), periodo.getMonths(), periodo.getDays());
+
+    public int calcularEdad() {
+        Date fechaActual = new Date();
+        int edad = people.getfdn().getYear() - fechaActual.getYear();
+        System.out.println("Tu edad es de " + edad);
+        return edad;
+    }
+
+    public boolean menorEdad() {
+        boolean menor = false;
+        System.out.println("Ingrese la edad de otra persona:");
+        int age = Leer.nextInt();
+
+        if (calcularEdad() > age) {
+            menor = true;
+
+        }
+        System.out.println("Eres Mayor que la otra persona?");
+        System.out.println(menor);
+        return menor;
+    }
+
+    public void mostrarPersona(Persona people) {
+        System.out.println(people.toString());
 
     }
-    
+
 }

@@ -25,36 +25,44 @@ import java.util.Scanner;
  */
 public class CelularService {
 
-    Scanner Leer = new Scanner(System.in);
+    Scanner Leer = new Scanner(System.in).useDelimiter("\n");
 
     Celular cel1 = new Celular();
+    private int[] codigo = new int[7];
 
     public void cargarCelular() {
         System.out.println("Ingrese la marca del celular");
-        cel1.setMarca(Leer.nextLine());
+        cel1.setMarca(Leer.next());
         System.out.println("Ingrese el precio del celular");
         cel1.setPrecio(Leer.nextDouble());
         System.out.println("Ingrese el modelo del celular");
-        cel1.setModelo(Leer.nextLine());
+        cel1.setModelo(Leer.next());
         System.out.println("Ingrese la memoria ram");
-        cel1.setMemoriaRam(Leer.nextLine());
+        cel1.setMemoriaRam(Leer.next());
         System.out.println("Ingrese el tamaño de almacenamiento");
-        cel1.setAlmacenamiento(Leer.nextLine());
+        cel1.setAlmacenamiento(Leer.next());
         this.cargarCodigo(cel1);
-        
 
     }
 
-    public Celular cargarCodigo(Celular cel1) {
+    public void cargarCodigo(Celular cel1) {
 
-        int[] codigo = new int[7];
-        for (int i = 0; i < codigo.length; i++) {
+        for (int i = 0; i < cel1.getCodigo().length; i++) {
             System.out.print("Ingrese el codigo del celular:");
-            codigo[i] = Leer.nextInt();
-
+            String codigoStr = Leer.next();
+            codigo[i] = Character.getNumericValue(codigoStr.charAt(i));
+            //      System.out.print("Ingrese el codigo del celular:");
+            //        codigo[i] =  Leer.nextInt();
+            //          System.out.println(cel1);
+//         cel1.setCodigo(cel1.getCodigo());
         }
-        cel1.setCodigo(codigo);
-        return cel1;
+        //System.out.println(cel1.getCodigo().length);
+        // cel1.setCodigo(codigo);
+        //return cel1;
 
+    }
+
+    public int[] getCodigo() {
+        return codigo;
     }
 }

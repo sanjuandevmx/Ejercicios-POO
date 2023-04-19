@@ -14,7 +14,9 @@ public class Persona {
     //La clase persona tiene los siguientes atributos: nombre, edad, sexo ("H", "M", "NB") de la clase String
     private String nombre;
     private int edad;
-    private String sexo;
+    private char sexo;
+    private double peso;
+    private double altura;
 
     //Creamos un constructor por defecto
 
@@ -23,10 +25,12 @@ public class Persona {
     
    //Creamos un constructor por cada uno de los atributos
 
-    public Persona(String nombre, int edad, String sexo) {
+    public Persona(String nombre, int edad, char sexo, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
+        this.altura = altura;
+        this.peso = peso;
     }
     
     //Creamos los metodos Getter and Setter de todos los atributos
@@ -47,21 +51,40 @@ public class Persona {
         this.edad = edad;
     }
 
-    public String getSexo() {
+    public char getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+
     
     //Generamos un toString para pasar todos los valores en una cadena.
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + '}';
+        return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
     }
-    
+
+
     
     
 }

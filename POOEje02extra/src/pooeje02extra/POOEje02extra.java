@@ -5,6 +5,9 @@
  */
 package pooeje02extra;
 
+import Entidades.Distancia;
+import Servicios.DistanciaServicios;
+
 /**
  *
  * @author brian
@@ -16,6 +19,11 @@ public class POOEje02extra {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        DistanciaServicios ds = new DistanciaServicios();
+        Distancia d1 = ds.crearPuntos();
+        System.out.println("La distancia entre los puntos es de "+ ds.calcularDistancia(d1));
+        
     }
     
 }

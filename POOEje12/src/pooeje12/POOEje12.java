@@ -13,7 +13,8 @@ public class POOEje12 {
         PersonaService person1 = new PersonaService();
         Persona edades3 = person1.crearPersona();
         person1.calcularEdad();
-        
+        person1.menorEdad();
+        person1.mostrarPersona(edades3);
 
     }
     

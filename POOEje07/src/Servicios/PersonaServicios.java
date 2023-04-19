@@ -23,31 +23,43 @@ public class PersonaServicios {
     //En este metodo imprimiremos un mensaje en pantalla para pedir los datos.
     //Los datos se ingresan por teclado
     public Persona crearPersona() {
-        
+
         System.out.println("Ingresar nombre");
-        prsn.setNombre(Leer.nextLine());
+        prsn.setNombre(Leer.next());
         System.out.println(" Ingrese edad ");
         prsn.setEdad(Leer.nextInt());
         System.out.println("Elige tu sexo");
-        String sex = Leer.nextLine();
-        if (sex.contentEquals("M") || sex.contentEquals("m")) {
-            prsn.setSexo(sex);}
-                if (sex.contentEquals("H") || sex.contentEquals("h")) {
-                    prsn.setSexo(sex);
-                } else if (sex.contentEquals("NB") || sex.contentEquals("nb")){
-        prsn.setSexo(sex);
+        prsn.setSexo(Leer.next().toUpperCase().charAt(0));
+        while (prsn.getSexo() != 'H' && prsn.getSexo() != 'M' && prsn.getSexo() != 'O') {
+            System.out.println("ERROR. Vuelva a ingresar su sexo(H - Hombre // M - Mujer // O - Otro): ");
+            prsn.setSexo(Leer.next().toUpperCase().charAt(0));
+        }
+        System.out.println("Ingrese su peso");
+        prsn.setPeso(Leer.nextDouble());
+        System.out.println("Ingrese su altura");
+        prsn.setAltura(Leer.nextDouble());
+        return prsn;
     }
 
-   
-                    return prsn;
+    public int calcularIMC(Persona peso, int altura) {
+        int x = 0;
+        double formulaIMC = prsn.getPeso() / (Math.pow(prsn.getAltura(), 2));
+        if (formulaIMC < 20) {
+            x = -1;
+        } else if (formulaIMC >= 20 && formulaIMC <= 25) {
+            x = 0;
+        } else {
+            x = 1;
+        }
+        return x;
+    }
+
+    public boolean esMayorDeEdad(Persona edad) {
+        boolean mayorDeEdad = false;
+        if (prsn.getEdad() >= 18) {
+            mayorDeEdad = true;
+
+        }
+        return mayorDeEdad;
     }
 }
-
-
-
-                  
-            
-    
-            
-          
-   

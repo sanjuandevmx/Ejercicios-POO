@@ -34,7 +34,14 @@ public class POOEje14 {
         CelularService cs = new CelularService();
         Celular nc = new Celular();
         cs.cargarCelular();
-        cs.cargarCodigo(nc);
+        //cs.cargarCodigo(nc);
+        cs.getCodigo();
+                
+        int[] codigo = nc.getCodigo();
+        System.out.print("El código ingresado es: ");
+        for (int i = 0; i < codigo.length; i++) {
+            System.out.print(codigo[i]);
+        }
     }
     
 }
